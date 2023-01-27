@@ -12,7 +12,7 @@
 <body>
 
 
-    <canvas id="celebrate"></canvas>
+    <canvas id="celebrate" style="position: absolute;"></canvas>
     <div class="container">
         <div class="row">
             <div class="col-12 mt-3">
@@ -35,10 +35,20 @@
             <div class="col-12">
                 
                 
+                <div id="alertWord" class="alert" role="alert" style="position: absolute; top: 10px; display: none;">
+                    10 palavras encontradas!    
+                </div>
+
+                <!-- <div  class="alert alert-success alert-message" role="alert" style="position: absolute; top: 10px;">
+                    10 palavras encontradas!    
+                </div> -->
+
+               
                 <div class="align-input">
                     <input type="text input-search" class="form-control" id="inputSearchWord" placeholder="Palavra-chave" required>
                     <button id="buttonSearch" class="btn btn-primary" type="button" onclick="fetchInArticle()">Tentar</button>
                 </div>
+                
                 <br>
                 <!-- <div id="alertError" class="alert alert-danger" role="alert"></div>
 
