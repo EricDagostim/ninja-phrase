@@ -1,12 +1,12 @@
 
-let article = "Alan Mathison Turing (Londres, 23 de junho de 1912 — Wilmslow, Cheshire, 7 de junho de 1954) foi um matemático cientista da computação, lógico, criptoanalista, filósofo e biólogo teórico britânico. Turing foi altamente influente no desenvolvimento da moderna ciência da computação teórica, proporcionando uma formalização dos conceitos de algoritmo e computação com a máquina de Turing, que pode ser considerada um modelo de um computador de uso geral. Ele é amplamente considerado o pai da ciência da computação teórica e da inteligência artificial. Apesar dessas realizações ele nunca foi totalmente reconhecido em seu país de origem durante sua vida por ser homossexual e porque grande parte de seu trabalho foi coberto pela Lei de Segredos Oficiais dia-a-dia passo-a-passo"
+let article = "Alan Mathison Turing (Londres, 23 de junho de 1912 — Wilmslow, Cheshire, 7 de junho de 1954) foi um matemático cientista da computação, lógico, criptoanalista, filósofo e biólogo teórico britânico. Turing foi altamente influente no desenvolvimento da moderna ciência da computação teórica, proporcionando uma formalização dos conceitos de algoritmo e computação com a máquina de Turing, que pode ser considerada um modelo de um computador de uso geral. Ele é amplamente considerado o pai da ciência da computação teórica e da inteligência artificial. Apesar dessas realizações ele nunca foi totalmente reconhecido em seu país de origem durante sua vida por ser homossexual e porque grande parte de seu trabalho foi coberto pela Lei de Segredos Oficiais"
 
 // let article = 'a a a a a a a a b c c c';
   
 $mask = "|";
 
     // $mask = "■";
-  var title = "Alan Mathison Turing cavalo"
+  var title = "Alan Mathison Turing"
   var titleArray = title.split(" ");
   var articleArrayLower = removeAccent(article).split(" ");
   var articleArray = article.split(" ");
@@ -80,6 +80,11 @@ $mask = "|";
     }
 
     function correctWord(wordsFound){
+        
+        let audio = new Audio();
+        audio.src = 'assets/audio/correctWordAudio.wav';
+
+        
         var element = document.getElementById("alertWord");
         jsConfetti.addConfetti({ confettiRadius: 4, confettiNumber: 500,})
            
@@ -93,9 +98,13 @@ $mask = "|";
             element.style.display = "none";
             
         }, 2500);
+        audio.play();
     }
 
     function wrongWord(keyWord){
+
+        let audio = new Audio();
+        audio.src = 'assets/audio/incorrectWordAudio.wav';
         var element = document.getElementById("alertWord");
         
         element.style.display = "block"
@@ -106,6 +115,7 @@ $mask = "|";
             element.classList.remove("alert-danger", "alert-message");
             element.style.display = "none";
         }, 2500);
+        audio.play();
     }
 
 {// @keypressed
